@@ -1,0 +1,1004 @@
+1
+ 
+                          INDEX TO THE LIBRARY
+ 
+                                 NUMAL
+ 
+            OF ALGOL 60 PROCEDURES IN NUMERICAL MATHEMATICS
+ 
+ 
+ ***********************************************************************
+ 
+ ON  REQUEST  OF  THE   ACADEMIC  COMPUTING  CENTRE  AMSTERDAM  ( SARA )
+ THE  LIBRARY   NUMAL   IS DEVELOPED   AND  SUPPORTED  BY THE  NUMERICAL
+ MATHEMATICS  DEPARTMENT  OF THE  MATHEMATICAL  CENTRE  (AMSTERDAM).
+ THE PRESENT DOCUMENT  CONTAINS A  SURVEY OF THE PROCEDURES AVAILABLE IN
+ NUMAL FOR ALGOL 60 VERSION 5.  MOREOVER, IT  DESCRIBES THE WAY IN WHICH
+ ONE CAN OBTAIN FULL DOCUMENTATION OF ALL AVAILABLE PROCEDURES.
+ 
+ 
+ TO GET ENTRANCE TO THE DOCUMENTATION.
+ 
+ CLASSIFIED  ACCORDING  TO  SUBJECT,  THE  PRESENT  INDEX  CONTAINS  THE
+ NAMES  OF  THE  PROCEDURES, THE  CORRESPONDING  CODE NUMBERS  IN NUMAL5
+ AND  A  REFERENCE  TO  THE  DOCUMENTATION.  THIS  REFERENCE  GIVES  THE
+ RECORD NUMBER IN THE DOCUMENTATION FILE.
+ IN ORDER TO CONSULT A SPECIFIED RECORD OF DOCUMENTATION,  ALL PRECEDING
+ RECORDS  HAVE  TO BE  SKIPPED.
+ 
+ 
+ EXAMPLE.
+ 
+ IN  ORDER  TO OBTAIN  THE  DESCRIPTION  OF  THE  PROCEDURE  "MULTISTEP"
+ (SECTION  5.2.1.1.1.1.F.; RECORD NUMBER = 211)  FROM  THE DOCUMENTATION
+ FILE THE FOLLOWING CONTROL CARDS CAN BE USED
+                  ......
+                  LABEL,TAPE,R,L=NUMAL5TAPE,ID=NUMAL5MC,D=GE,VSN=T1886H.
+                  SKIPF,TAPE,1,17. TO POSITION THE TAPE
+                  COMMENT.         AT THE DOCUMENT FILE
+                  SKIPF,TAPE,210.
+                  COPYBR,TAPE,OUTPUT.
+                  ......
+ IN ORDER TO OBTAIN THE SOURCE TEXT, ONE MORE RECORD HAD TO BE SKIPPED.
+ 
+ 
+ STATUS OF NUMAL AND RESPONSIBILITY.
+ 
+ IN 1979  THE INTEREST OF THE  MATHEMATICAL CENTRE  IN THE  CREATION  OF
+ GENERAL  NUMERICAL  SOFTWARE  IN  ALGOL60  DECREASED  AND THE  DRAFTING
+ COMMITTEE DECIDED  TO CONCLUDE THE  NUMAL PROJECT WITH THE  PUBLICATION
+ OF A FINAL REVISION OF THE LIBRARY IN BOOK FORM.
+ THIS RESULTED IN THE MATHEMATICAL CENTRE PUBLICATION: 
+     P.W. HEMKER (ED.)[1981]: 
+     NUMAL. NUMERICAL PROCEDURES IN ALGOL 60. 7 VOLUMES.
+     MC SYLLABUS, MATHEMATICAL CENTRE, AMSTERDAM.
+ IN  THIS FORM THE  LIBRARY  NUMAL  CAN BE SEEN AS A DESCRIPTION  OF THE
+ STATE-OF-THE-ART  OF NUMERICAL ALGOL60 PROGRAMMING AT THE  MATHEMATICAL
+ CENTRE AT THE END OF THE 1970-S.
+ IT IS  CLAIMED  TO  CONTAIN  A VALUABLE  COLLECTION  OF  ROUTINES  IN A
+ LANGUAGE THAT STILL CAN DESCRIBE NUMERICAL PROCEDURES  BETTER THAN MANY
+ OTHER PROGRAMMING LANGUAGES CURRENTLY IN USE.
+1
+ IN 1981 A NEW TRANSLATED LIBRARY WAS PRODUCED  FOR THE USE OF THE NUMAL
+ PROCEDURES UNDER  ALGOL 60 VERSION 5  ( AT THE ACADEMIC COMPUTER CENTRE
+ OF AMSTERDAM ).  THIS REQUIRED  AN ADAPTATION  OF ALL  SOURCE TEXTS  TO
+ ALGOL 60.1 STANDARD.   TO THIS END A COMPLETELY  NEW DOCUMENTATION FILE
+ WAS MADE  DIFFERING  FROM THE FORMER ONE  (AND FROM THE ABOVE MENTIONED
+ PUBLICATION) IN THE FOLLOWING WAYS: 
+  1) A FEW CHANGES WERE NECESSARY WHEN THE SOURCE TEXT WAS NOT ACCORDING
+     TO ALGOL 60.1 STANDARD (ESPECIALLY WHEN "INTEGER" AND "REAL"  TYPES
+     TYPES WERE INTERCHANGED IN PARAMETER SUBSTITUTION).
+  2) IN  ORDER  TO  PROCESS  THE  DOCUMENT FILE  AUTOMATICALLY,  SEVERAL
+     IRREGULARITIES CONCERNING LAY-OUT WERE CORRECTED.
+  3) A  COUPLE OF ERRORS  IN THE SPECIFICATIONS  OF THE PROCEDURES  WERE
+     DETECTED AND DULY CORRECTED.
+ A RECORD IS KEPT OF ALL CHANGES EXCEPT THOSE OF THE LAY-OUT.
+ 
+ ALTHOUGH  MUCH EFFORT HAS BEEN SPENT TO KEEP THE NUMBER OF ERRORS  TO A
+ MINIMUM, IT IS POSSIBLE THAT SOME MINOR ERRORS STILL REMAIN.
+ THE  MATHEMATICAL  CENTRE  CANNOT  BE  HELD LIABLE  FOR  DAMAGE  DUE TO
+ ILL-FUNCTIONING OF ANY PROGRAM USING THE NUMAL LIBRARY.
+ THE  NUMERICAL MATHEMATICS  DEPARTMENT  WILL KEEP  A LIST OF ALL ERRORS
+ IN THE DOCUMENTATION AND/OR THE PROCEDURES THAT BECOME KNOWN,  AND THIS
+ LIST CAN BE OBTAINED ON REQUEST.
+ 
+ FOR REMARKS AND REQUESTS: 
+ 
+    MATHEMATISCH CENTRUM
+    AFDELING NUMERIEKE WISKUNDE
+    KRUISLAAN 413               (ADDRESS FOR VISITS)
+    1098 SJ  AMSTERDAM
+    POSTBUS 4079                (MAILING ADDRESS)
+    1009 AB  AMSTERDAM
+    TEL.: 020 - 592 9333.
+ 
+ 
+ 
+                                                   J. KOK
+                                                  (MATHEMATICAL CENTRE)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ NO  PART  OF THE  LIBRARY   NUMAL   MAY  BE  REPRODUCED,  STORED  IN  A
+ RETRIEVAL  SYSTEM   OR  TRANSMITTED,  IN  ANY  FORM  OR  BY ANY  MEANS,
+ ELECTRONIC,   PHOTOCOPYING,  RECORDING,  OR  OTHERWISE,   WITHOUT   THE
+ PRIOR  WRITTEN  PERMISSION  OF THE  ACADEMIC COMPUTING CENTRE AMSTERDAM
+ (SARA) OR  THE  MATHEMATICAL CENTRE  (AMSTERDAM).
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    1.ELEMENTARY PROCEDURES
+         1.REAL VECT AND MAT OPERATIONS
+              1.INITIALIZATION
+                                       INIVEC                       *   31010    NOV/81       1
+                                       INIMAT                       *   31011    NOV/81       1
+                                       INIMATD                      *   31012    NOV/81       1
+                                       INISYMD                      *   31013    NOV/81       1
+                                       INISYMROW                    *   31014    NOV/81       1
+              2.DUPLICATION
+                                       DUPVEC                       *   31030    NOV/81       3
+                                       DUPVECROW                    *   31031    NOV/81       3
+                                       DUPROWVEC                    *   31032    NOV/81       3
+                                       DUPVECCOL                    *   31033    NOV/81       3
+                                       DUPCOLVEC                    *   31034    NOV/81       3
+                                       DUPMAT                       *   31035    NOV/81       3
+              3.MULTIPLICATION
+                                       MULVEC                       *   31020    NOV/81       5
+                                       MULROW                       *   31021    NOV/81       5
+                                       MULCOL                       *   31022    NOV/81       5
+                                       COLCST                       *   31131    NOV/81       5
+                                       ROWCST                       *   31132    NOV/81       5
+              4.SCALAR PRODUCTS
+                   1.VECTOR VECTOR PRODUCTS
+                                       VECVEC                       *   34010    NOV/81       7
+                                       MATVEC                       *   34011    NOV/81       7
+                                       TAMVEC                       *   34012    NOV/81       7
+                                       MATMAT                       *   34013    NOV/81       7
+                                       TAMMAT                       *   34014    NOV/81       7
+                                       MATTAM                       *   34015    NOV/81       7
+                                       SEQVEC                       *   34016    NOV/81       7
+                                       SCAPRD1                      *   34017    NOV/81       7
+                                       SYMMATVEC                    *   34018    NOV/81       7
+                   2.MATRIX VECTOR PRODUCTS
+                                       FULMATVEC                    *   31500    NOV/81       9
+                                       FULTAMVEC                    *   31501    NOV/81       9
+                                       FULSYMMATVEC                     31502    NOV/81       9
+                                       RESVEC                       *   31503    NOV/81       9
+                                       SYMRESVEC                        31504    NOV/81       9
+                   3.MATRIX MATRIX PRODUCTS
+                                       HSHVECMAT                    *   31070    NOV/81      11
+                                       HSHCOLMAT                    *   31071    NOV/81      11
+                                       HSHROWMAT                    *   31072    NOV/81      11
+                                       HSHVECTAM                    *   31073    NOV/81      11
+                                       HSHCOLTAM                    *   31074    NOV/81      11
+                                       HSHROWTAM                    *   31075    NOV/81      11
+              5.ELIMINATION
+                                       ELMVEC                       *   34020    NOV/81      13
+                                       ELMCOL                       *   34023    NOV/81      13
+                                       ELMROW                       *   34024    NOV/81      13
+                                       ELMVECCOL                    *   34021    NOV/81      13
+                                       ELMCOLVEC                    *   34022    NOV/81      13
+                                       ELMVECROW                    *   34026    NOV/81      13
+                                       ELMROWVEC                    *   34027    NOV/81      13
+                                       ELMCOLROW                    *   34029    NOV/81      13
+    1.   1.   5.                                                       ELMROWCOL                    *   34028    NOV/81      13
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    1.   1.   5.                                                       MAXELMROW                    *   34025    NOV/81      13
+              6.INTERCHANGING
+                                       ICHVEC                       *   34030    NOV/81      15
+                                       ICHCOL                       *   34031    NOV/81      15
+                                       ICHROW                       *   34032    NOV/81      15
+                                       ICHROWCOL                    *   34033    NOV/81      15
+                                       ICHSEQVEC                    *   34034    NOV/81      15
+                                       ICHSEQ                       *   34035    NOV/81      15
+              7.ROTATION
+                                       ROTCOL                       *   34040    NOV/81      17
+                                       ROTROW                       *   34041    NOV/81      17
+              8.NORMS
+                                       INFNRMVEC                    *   31061    NOV/81      19
+                                       INFNRMROW                    *   31062    NOV/81      19
+                                       INFNRMCOL                    *   31063    NOV/81      19
+                                       INFNRMMAT                    *   31064    NOV/81      19
+                                       ONENRMVEC                    *   31065    NOV/81      19
+                                       ONENRMROW                    *   31066    NOV/81      19
+                                       ONENRMCOL                    *   31067    NOV/81      19
+                                       ONENRMMAT                    *   31068    NOV/81      19
+                                       ABSMAXMAT                    *   31069    NOV/81      19
+              9.SCALING
+                                       REASCL                           34183    NOV/81      21
+         2.COMPL VECT AND MAT OPERATIONS
+              1.
+              2.
+              3.MULTIPLICATION
+                                       COMCOLCST                        34352    NOV/81      23
+                                       COMROWCST                        34353    NOV/81      23
+              4.SCALAR PRODUCTS
+                                       COMMATVEC                        34354    NOV/81      25
+                                       HSHCOMCOL                        34355    NOV/81      25
+                                       HSHCOMPRD                        34356    NOV/81      25
+              5.ELIMINATION
+                                       ELMCOMVECCOL                     34376    NOV/81      27
+                                       ELMCOMCOL                        34377    NOV/81      27
+                                       ELMCOMROWVEC                     34378    NOV/81      27
+              6.INTERCHANGING
+              7.ROTATION
+                                       ROTCOMCOL                        34357    NOV/81      29
+                                       ROTCOMROW                        34358    NOV/81      29
+                                       CHSH2                            34611    NOV/81      29
+              8.NORMS
+                                       COMEUCNRM                        34359    NOV/81      31
+              9.SCALING
+                                       COMSCL                           34193    NOV/81      33
+                                       SCLCOM                           34360    NOV/81      33
+         3.COMPLEX ARITHMETIC
+              1.MONADIC OPERATIONS
+                                       COMABS                           34340    NOV/81      35
+                                       COMSQRT                          34343    NOV/81      35
+                                       CARPOL                           34344    NOV/81      35
+              2.DYADIC OPERATIONS
+                                       COMMUL                       *   34341    NOV/81      37
+    1.   3.   2.                                                       COMDIV                       *   34342    NOV/81      37
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    1.   4.LONG INTEGER ARITHMETIC
+                                       LNGINTADD                        31200    NOV/81      39
+                                       LNGINTSUBTRACT                   31201    NOV/81      39
+                                       LNGINTMULT                       31202    NOV/81      39
+                                       LNGINTDIVIDE                     31203    NOV/81      39
+                                       LNGINTPOWER                      31204    NOV/81      39
+         5.LONG REAL ARITHMETIC
+              1.ELEM. ARITHMETIC OPERATIONS
+                                       DP ADD                       *   31101    NOV/81      41
+                                       DP SUB                       *   31102    NOV/81      41
+                                       DP MUL                       *   31103    NOV/81      41
+                                       DP DIV                       *   31104    NOV/81      41
+                                       DP POW                           31109    NOV/81      41
+                                       LNG ADD                      *   31105    NOV/81      41
+                                       LNG SUB                      *   31106    NOV/81      41
+                                       LNG MUL                      *   31107    NOV/81      41
+                                       LNG DIV                      *   31108    NOV/81      41
+                                       LNG POW                          31110    NOV/81      41
+              2.SCALAR PRODUCTS
+                                       LNGVECVEC                    *   34410    NOV/81      43
+                                       LNGMATVEC                    *   34411    NOV/81      43
+                                       LNGTAMVEC                    *   34412    NOV/81      43
+                                       LNGMATMAT                    *   34413    NOV/81      43
+                                       LNGTAMMAT                    *   34414    NOV/81      43
+                                       LNGMATTAM                    *   34415    NOV/81      43
+                                       LNGSEQVEC                    *   34416    NOV/81      43
+                                       LNGSCAPRD1                   *   34417    NOV/81      43
+                                       LNGSYMMATVEC                 *   34418    NOV/81      43
+                                       LNGFULMATVEC                 *   31505    NOV/81      43
+                                       LNGFULTAMVEC                 *   31506    NOV/81      43
+                                       LNGFULSYMMATVEC                  31507    NOV/81      43
+                                       LNGRESVEC                    *   31508    NOV/81      43
+                                       LNGSYMRESVEC                     31509    NOV/81      43
+              3.CONVERSION
+                                       LNGREATODECI                     31100    NOV/81      45
+    2.ALGEBRAIC EVALUATIONS
+         1.EVAL. OF A FINITE SERIES
+         2.EVAL. OF POLYNOMIALS
+              1.EVAL. OF GENERAL POLYNOMIALS
+                   1.POLYNOMIALS IN GRUNERT FORM
+                                       POL                              31040    NOV/81      47
+                                       TAYPOL                           31241    NOV/81      47
+                                       NORDERPOL                        31242    NOV/81      47
+                                       DERPOL                           31243    NOV/81      47
+                   2.POLYNOMIALS IN NEWTON FORM
+              2.EVAL. OF ORTHOGON. POLYNOMIALS
+                   1.GENERAL ORTHOGON. POLYNOMIALS
+                                       ORTPOL                           31044    NOV/81      49
+                                       ORTPOLSYM                        31048    NOV/81      49
+                                       ALLORTPOL                        31045    NOV/81      49
+                                       ALLORTPOLSYM                     31049    NOV/81      49
+                                       SUMORTPOL                        31047    NOV/81      49
+                                       SUMORTPOLSYM                     31058    NOV/81      49
+                   2.CHEBYCHEV POLYNOMIALS
+    2.   2.   2.   2.                                                  CHEPOLSUM                        31046    NOV/81      51
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    2.   2.   2.   2.                                                  ODDCHEPOLSUM                     31059    NOV/81      51
+                                       CHEPOL                           31042    NOV/81      51
+                                       ALLCHEPOL                        31043    NOV/81      51
+              3.EVAL. OF TRIGONOM. POLYNOMIALS
+                   1.EVAL. OF FOURIER SERIES
+                                       SINSER                           31090    NOV/81      53
+                                       COSSER                           31091    NOV/81      53
+                                       FOUSER                           31092    NOV/81      53
+                                       FOUSER1                          31093    NOV/81      53
+                                       FOUSER2                          31094    NOV/81      53
+                                       COMFOUSER                        31095    NOV/81      53
+                                       COMFOUSER1                       31096    NOV/81      53
+                                       COMFOUSER2                       31097    NOV/81      53
+         3.EVAL. OF CONTINUED FRACTIONS
+                                       JFRAC                            35083    NOV/81      55
+         4.OPERATIONS ON POLYNOMIALS
+              1.TRANSF. OF REPRESENTATION
+                                       POLCHS                           31051    NOV/81      57
+                                       CHSPOL                           31052    NOV/81      57
+                                       POLSHTCHS                        31053    NOV/81      57
+                                       SHTCHSPOL                        31054    NOV/81      57
+                                       GRNNEW                           31055    NOV/81      57
+                                       NEWGRN                           31050    NOV/81      57
+                                       LINTFMPOL                        31250    NOV/81      57
+              2.OP. ON GENERAL POLYNOMIALS
+              3.OP. ON ORTHOGONAL POLYNOMIALS
+                                       INTCHS                           31248    NOV/81      59
+         5.FAST FOURIER TRANSFORM
+    3.LINEAR ALGEBRA
+         1.LINEAR SYSTEMS
+              1.FULL MATRICES
+                   1.SQUARE NON-SINGULAR MATRICES
+                        1.REAL MATRICES
+                             1.GENERAL MATRICES
+  1.PREPARATORY PROCEDURES
+                                       DEC                              34300    NOV/81      61
+                                       GSSELM                           34231    NOV/81      61
+                                       ONENRMINV                        34240    NOV/81      61
+                                       ERBELM                           34241    NOV/81      61
+                                       GSSERB                           34242    NOV/81      61
+                                       GSSNRI                           34252    NOV/81      61
+  2.CALCULATION OF DETERMINANT
+                                       DETERM                           34303    NOV/81      63
+  3.SOLUTION OF LINEAR EQUATIONS
+                                       SOL                              34051    NOV/81      65
+                                       DECSOL                           34301    NOV/81      65
+                                       SOLELM                           34061    NOV/81      65
+                                       GSSSOL                           34232    NOV/81      65
+                                       GSSSOLERB                        34243    NOV/81      65
+  4.MATRIX INVERSION
+                                       INV                              34053    NOV/81      67
+                                       DECINV                           34302    NOV/81      67
+                                       INV1                             34235    NOV/81      67
+                                       GSSINV                           34236    NOV/81      67
+    3.   1.   1.   1.   1.   1.   4.                                   GSSINVERB                        34244    NOV/81      67
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    3.   1.   1.   1.   1.   1.   5.ITERATIVELY IMPROVED SOLUTION
+                                       ITISOL                           34250    NOV/81      69
+                                       GSSITISOL                        34251    NOV/81      69
+                                       ITISOLERB                        34253    NOV/81      69
+                                       GSSITISOLERB                     34254    NOV/81      69
+                             2.SYMMETRIC POS DEF MATRICES
+  1.PREPARATORY PROCEDURES
+                                       CHLDEC2                          34310    NOV/81      71
+                                       CHLDEC1                          34311    NOV/81      71
+  2.CALCULATION OF DETERMINANT
+                                       CHLDETERM2                       34312    NOV/81      73
+                                       CHLDETERM1                       34313    NOV/81      73
+  3.SOLUTION OF LINEAR EQUATIONS
+                                       CHLSOL2                          34390    NOV/81      75
+                                       CHLSOL1                          34391    NOV/81      75
+                                       CHLDECSOL2                       34392    NOV/81      75
+                                       CHLDECSOL1                       34393    NOV/81      75
+  4.MATRIX INVERSION
+                                       CHLINV2                          34400    NOV/81      77
+                                       CHLINV1                          34401    NOV/81      77
+                                       CHLDECINV2                       34402    NOV/81      77
+                                       CHLDECINV1                       34403    NOV/81      77
+                             3.GENERAL SYMMETRIC MATRICES
+  1.PREPARATORY PROCEDURES
+                                       DECSYM2                          34291    NOV/81      79
+  2.CALCULATION OF DETERMINANT
+                                       DETERMSYM2                       34294    NOV/81      81
+  3.SOLUTION OF LINEAR EQUATIONS
+                                       SOLSYM2                          34292    NOV/81      83
+                                       DECSOLSYM2                       34293    NOV/81      83
+                        2.COMPLEX MATRICES
+                   2.FULL RANK OVERDETERM SYSTEMS
+                        1.REAL MATRICES
+                             1.PREPARATORY PROCEDURES
+                                       LSQORTDEC                        34134    NOV/81      85
+                                       LSQDGLINV                        34132    NOV/81      85
+                             2.LEAST SQUARES SOLUTION
+                                       LSQSOL                           34131    NOV/81      87
+                                       LSQORTDECSOL                     34135    NOV/81      87
+                             3.INVERSE MATRIX OF NORMAL EQN.
+                                       LSQINV                           34136    NOV/81      89
+                             4.LEAST SQRS WITH LIN. CONSTR.
+                                       LSQDECOMP                        34137    NOV/81      91
+                                       LSQREFSOL                        34138    NOV/81      91
+                        2.COMPLEX MATRICES
+                   3.OTHER PROBLEMS
+                        1.REAL MATRICES
+                             1.SOLUTION OVERDETERMINED SYST
+                                       SOLSVDOVR                        34280    NOV/81      93
+                                       SOLOVR                           34281    NOV/81      93
+                             2.SOLUTION UNDERDETERM SYSTEMS
+                                       SOLSVDUND                        34282    NOV/81      95
+                                       SOLUND                           34283    NOV/81      95
+                             3.SOLUTION HOMOGENEOUS EQUATION
+    3.   1.   1.   3.   1.   3.                                        HOMSOLSVD                        34284    NOV/81      97
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    3.   1.   1.   3.   1.   3.                                        HOMSOL                           34285    NOV/81      97
+                             4.PSEUDO-INVERSION
+                                       PSDINVSVD                        34286    NOV/81      99
+                                       PSDINV                           34287    NOV/81      99
+                        2.COMPLEX MATRICES
+              2.SPARSE MATRICES
+                   1.DIRECT METHODS
+                        1.REAL MATRICES
+                             1.NON-SYMMETRIC MATRICES
+  1.BAND MATRICES
+       1.PREPARATORY PROCEDURES
+                                       DECBND                           34320    NOV/81     101
+       2.CALCULATION OF DETERMINANT
+                                       DETERMBND                        34321    NOV/81     103
+       3.SOLUTION OF LINEAR EQUATIONS
+                                       SOLBND                           34071    NOV/81     105
+                                       DECSOLBND                        34322    NOV/81     105
+  2.TRIDIAGONAL MATRICES
+       1.PREPARATORY PROCEDURES
+                                       DECTRI                           34423    NOV/81     107
+                                       DECTRIPIV                        34426    NOV/81     107
+       2.CALCULATION OF DETERMINANT
+       3.SOLUTION OF LINEAR EQUATIONS
+                                       SOLTRI                           34424    NOV/81     109
+                                       DECSOLTRI                        34425    NOV/81     109
+                                       SOLTRIPIV                        34427    NOV/81     109
+                                       DECSOLTRIPIV                     34428    NOV/81     109
+  3.BLOC-TRIDIAGONAL MATRICES
+                             2.SYMMETRIC POS DEF MATRICES
+  1.BAND MATRICES
+       1.PREPARATORY PROCEDURES
+                                       CHLDECBND                        34330    NOV/81     111
+       2.CALCULATION OF DETERMINANT
+                                       CHLDETERMBND                     34331    NOV/81     113
+       3.SOLUTION OF LINEAR EQUATIONS
+                                       CHLSOLBND                        34332    NOV/81     115
+                                       CHLDECSOLBND                     34333    NOV/81     115
+  2.TRIDIAGONAL MATRICES
+       1.PREPARATORY PROCEDURES
+                                       DECSYMTRI                        34420    NOV/81     117
+       2.CALCULATION OF DETERMINANT
+       3.SOLUTION OF LINEAR EQUATIONS
+                                       SOLSYMTRI                        34421    NOV/81     119
+                                       DECSOLSYMTRI                     34422    NOV/81     119
+  3.BLOC-TRIDIAGONAL MATRICES
+                        2.COMPLEX MATRICES
+                   2.ITERATIVE METHODS
+                        1.REAL MATRICES
+                                       CONJ GRAD                        34220    NOV/81     121
+                        2.COMPLEX MATRICES
+         2.TRANSFORMATION TO SPECIAL FORM
+              1.SIMILARITY TRANSFORMATIONS
+                   1.EQUILIBRATION
+                        1.REAL MATRICES
+    3.   2.   1.   1.   1.                                             EQILBR                           34173    NOV/81     123
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    3.   2.   1.   1.   1.                                             BAKLBR                           34174    NOV/81     123
+                        2.COMPLEX MATRICES
+                                       EQILBRCOM                        34361    NOV/81     125
+                                       BAKLBRCOM                        34362    NOV/81     125
+                   2.TRANSF TO HESSENBERG FORM
+                        1.REAL MATRICES
+                             1.SYMMETRIC MATRICES
+                                       TFMSYMTRI2                       34140    NOV/81     127
+                                       BAKSYMTRI2                       34141    NOV/81     127
+                                       TFMPREVEC                        34142    NOV/81     127
+                                       TFMSYMTRI1                       34143    NOV/81     127
+                                       BAKSYMTRI1                       34144    NOV/81     127
+                             2.ASYMMETRIC MATRICES
+                                       TFMREAHES                        34170    NOV/81     129
+                                       BAKREAHES1                       34171    NOV/81     129
+                                       BAKREAHES2                       34172    NOV/81     129
+                        2.COMPLEX MATRICES
+                             1.HERMITIAN MATRICES
+                                       HSHHRMTRI                        34363    NOV/81     131
+                                       HSHHRMTRIVAL                     34364    NOV/81     131
+                                       BAKHRMTRI                        34365    NOV/81     131
+                             2.NON-HERMITIAN MATRICES
+                                       HSHCOMHES                        34366    NOV/81     133
+                                       BAKCOMHES                        34367    NOV/81     133
+              2.OTHER TRANSFORMATIONS
+                   1.TRANSF TO BIDIAGONAL FORM
+                        1.REAL MATRICES
+                                       HSHREABID                        34260    NOV/81     135
+                                       PSTTFMMAT                        34261    NOV/81     135
+                                       PRETFMMAT                        34262    NOV/81     135
+                        2.COMPLEX MATRICES
+         3.THE (ORDINARY) EIGENV PROBLEM
+              1.REAL MATRICES
+                   1.SYMMETRIC MATRICES
+                        1.TRIDIAGONAL MATRICES
+                                       VALSYMTRI                        34151    NOV/81     137
+                                       VECSYMTRI                        34152    NOV/81     137
+                                       QRIVALSYMTRI                     34160    NOV/81     137
+                                       QRISYMTRI                        34161    NOV/81     137
+                        2.FULL MATRICES
+                                       EIGVALSYM2                       34153    NOV/81     139
+                                       EIGSYM2                          34154    NOV/81     139
+                                       EIGVALSYM1                       34155    NOV/81     139
+                                       EIGSYM1                          34156    NOV/81     139
+                                       QRIVALSYM2                       34162    NOV/81     139
+                                       QRISYM                           34163    NOV/81     139
+                                       QRIVALSYM1                       34164    NOV/81     139
+                        3.ITERATIVE IMPROVEMENT
+                             1.AUXILIARY PROCEDURES
+                                       MERGESORT                        36405    NOV/81     141
+                                       VECPERM                          36404    NOV/81     141
+                                       ROWPERM                          36403    NOV/81     141
+                             2.ORTHOGONALISATION
+                                       ORTHOG                           36402    NOV/81     143
+    3.   3.   1.   1.   3.   3.IMPROVEMENT AND ERRORBOUNDS
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    3.   3.   1.   1.   3.   3.                                        SYMEIGINP                        36401    NOV/81     145
+                   2.ASYMMETRIC MATRICES
+                        1.MATRICES IN HESSENBERG FORM
+                                       REAVALQRI                        34180    NOV/81     147
+                                       REAVECHES                        34181    NOV/81     147
+                                       REAQRI                           34186    NOV/81     147
+                                       COMVALQRI                        34190    NOV/81     147
+                                       COMVECHES                        34191    NOV/81     147
+                        2.FULL MATRICES
+                                       REAEIGVAL                        34182    NOV/81     149
+                                       REAEIG1                          34184    NOV/81     149
+                                       REAEIG3                          34187    NOV/81     149
+                                       COMEIGVAL                        34192    NOV/81     149
+                                       COMEIG1                          34194    NOV/81     149
+              2.COMPLEX MATRICES
+                   1.HERMITIAN MATRICES
+                                       EIGVALHRM                        34368    NOV/81     151
+                                       EIGHRM                           34369    NOV/81     151
+                                       QRIVALHRM                        34370    NOV/81     151
+                                       QRIHRM                           34371    NOV/81     151
+                   2.NON-HERMITIAN MATRICES
+                        1.MATRICES IN HESSENBERG FORM
+                                       VALQRICOM                        34372    NOV/81     153
+                                       QRICOM                           34373    NOV/81     153
+                        2.FULL MATRICES
+                                       EIGVALCOM                        34374    NOV/81     155
+                                       EIGCOM                           34375    NOV/81     155
+         4.THE GENERALIZED EIGENV PROBLEM
+              1.REAL MATRICES
+                   1.SYMMETRIC MATRICES
+                   2.ASYMMETRIC MATRICES
+                                       QZIVAL                           34600    NOV/81     157
+                                       QZI                              34601    NOV/81     157
+                                       HSHDECMUL                        34602    NOV/81     157
+                                       HESTGL3                          34603    NOV/81     157
+                                       HESTGL2                          34604    NOV/81     157
+                                       HSH2COL                          34605    NOV/81     157
+                                       HSH3COL                          34606    NOV/81     157
+                                       HSH2ROW3                         34607    NOV/81     157
+                                       HSH2ROW2                         34608    NOV/81     157
+                                       HSH3ROW3                         34609    NOV/81     157
+                                       HSH3ROW2                         34610    NOV/81     157
+         5.SINGULAR VALUES
+              1.REAL MATRICES
+                   1.BIDIAGONAL MATRICES
+                                       QRISNGVALBID                     34270    NOV/81     159
+                                       QRISNGVALDECBID                  34271    NOV/81     159
+                   2.FULL MATRICES
+                                       QRISNGVAL                        34272    NOV/81     161
+                                       QRISNGVALDEC                     34273    NOV/81     161
+              2.COMPLEX MATRICES
+         6.ZEROS OF POLYNOMIALS
+              1.ZEROS OF GENERAL REAL POLYNOM.
+                                       ZERPOL                           34501    NOV/81     163
+    3.   6.   1.                                                       BOUNDS                           34502    NOV/81     163
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    3.   6.   2.ZEROS OF ORTHOGONAL POLYNOM.
+                                       ALLZERORTPOL                     31362    NOV/81     165
+                                       LUPZERORTPOL                     31363    NOV/81     165
+                                       SELZERORTPOL                     31364    NOV/81     165
+                                       ALLJACZER                        31370    NOV/81     165
+                                       ALLLAGZER                        31371    NOV/81     165
+              3.ZEROS OF COMPLEX POLYNOMIALS
+                                       COMKWD                           34345    NOV/81     167
+    4.ANALYTIC EVALUATIONS
+         1.EVAL. OF AN INFINITE SERIES
+                                       EULER                            32010    NOV/81     169
+                                       SUMPOSSERIES                     32020    NOV/81     169
+         2.QUADRATURE
+              1.ONE-DIMENSIONAL QUADRATURE
+                                       QADRAT                           32070    NOV/81     171
+                                       INTEGRAL                         32051    NOV/81     173
+              2.MULTIDIMENSIONAL QUADRATURE
+                                       TRICUB                           32075    NOV/81     175
+              3.GAUSSIAN QUADRATURE
+                   1.GENERAL WEIGHTS
+                                       RECCOF                           31254    NOV/81     177
+                                       GSSWTS                           31253    NOV/81     177
+                                       GSSWTSSYM                        31252    NOV/81     177
+                   2.SPECIAL WEIGHTS
+                                       GSSJACWGHTS                      31425    NOV/81     179
+                                       GSSLAGWGHTS                      31427    NOV/81     179
+         3.NUMERICAL DIFFERENTIATION
+              1.FUNCTIONS OF ONE VARIABLE
+              2.FUNCTIONS OF MORE VARIABLES
+                   1.CALC. WITH DIFFERENCE FORMULAS
+                                       JACOBNNF                         34437    NOV/81     181
+                                       JACOBNMF                         34438    NOV/81     181
+                                       JACOBNBNDF                       34439    NOV/81     181
+    5.ANALYTICAL PROBLEMS
+         1.ANALYTICAL EQUATIONS
+              1.NON-LINEAR EQUATIONS
+                   1.A SINGLE EQUATION
+                        1.NO DERIVATIVE AVAILABLE
+                                       ZEROIN                           34150    NOV/81     183
+                                       ZEROINRAT                        34436    NOV/81     183
+                        2.DERIVATIVE AVAILABLE
+                                       ZEROINDER                        34453    NOV/81     185
+                   2.A SYSTEM OF EQUATIONS
+                        1.AUXILIARY PROCEDURES
+                        2.JACOBIAN MATRIX NOT AVAILABLE
+                                       QUANEWBND                        34430    NOV/81     187
+                                       QUANEWBND1                       34431    NOV/81     187
+                        3.JACOBIAN MATRIX AVAILABLE
+                   3.POLYNOMIAL EQUATIONS
+                     SEE ALSO SECTION 3.6
+              2.UNCONSTRAINED OPTIMIZATION
+                   1.FUNCTIONS OF ONE VARIABLE
+                        1.DERIVATIVE NOT AVAILABLE
+                                       MININ                            34433    NOV/81     189
+    5.   1.   2.   1.   2.DERIVATIVE AVAILABLE
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    5.   1.   2.   1.   2.                                             MININDER                         34435    NOV/81     191
+                   2.FUNCTIONS OF MORE VARIABLES
+                        1.AUXILIARY PROCEDURES
+                                       LINEMIN                          34210    NOV/81     193
+                                       RNK1UPD                          34211    NOV/81     193
+                                       DAVUPD                           34212    NOV/81     193
+                                       FLEUPD                           34213    NOV/81     193
+                        2.NO DERIVATIVES AVAILABLE
+                                       PRAXIS                           34432    NOV/81     195
+                        3.GRADIENT AVAILABLE
+                                       RNK1MIN                          34214    NOV/81     197
+                                       FLEMIN                           34215    NOV/81     197
+                        4.GRADIENT & JACOBIAN AVAILABLE
+              3.OVERDETERMINED NONLINEAR SYST.
+                   1.LEAST SQUARES SOLUTIONS
+                     SEE ALSO SECTION 7.
+                        1.AUXILIARY PROCEDURES
+                        2.JACOBIAN MATRIX NOT AVAILABLE
+                          SEE ALSO SECTION 5.1.2.2.2.
+                        3.JACOBIAN MATRIX AVAILABLE
+                                       MARQUARDT                        34440    NOV/81     199
+                                       GSSNEWTON                        34441    NOV/81     199
+         2.FUNCTIONAL EQUATIONS
+              1.DIFFERENTIAL EQUATIONS
+                   1.INITIAL VALUE PROBLEMS
+                        1.FIRST ORDER ORDINARY D.E.
+                             1.NO DERIVATIVES RHS AVAILABLE
+                                       RK1                              33010    NOV/81     201
+                                       RKE                              33033    NOV/81     203
+                                       RK4A                             33016    NOV/81     205
+                                       RK4NA                            33017    NOV/81     207
+                                       RK5NA                            33018    NOV/81     209
+                                       MULTISTEP                        33080    NOV/81     211
+                                       DIFFSYS                          33180    NOV/81     213
+                                       ARK                              33061    NOV/81     215
+                                       EFRK                             33070    NOV/81     217
+                             2.JACOBIAN MATRIX AVAILABLE
+                                       EFSIRK                           33160    NOV/81     219
+                                       EFERK                            33120    NOV/81     221
+                                       LINIGER1VS                       33132    NOV/81     223
+                                       LINIGER2                         33131    NOV/81     225
+                                       GMS                              33191    NOV/81     227
+                                       IMPEX                            33135    NOV/81     229
+                               SEE ALSO PROC. MULTISTEP (5.2.1.1.1.1)
+                             3.SEVERAL DERIVATIVES AVAILABLE
+                                       MODIFIED TAYLOR                  33040    NOV/81     231
+                                       EXPONENTIALLY FITTED TAYLOR      33050    NOV/81     233
+                        2.SECOND ORDER ORDINARY D.E.
+                             1.NO DERIVATIVES RHS AVAILABLE
+                                       RK2                              33012    NOV/81     235
+                                       RK2N                             33013    NOV/81     237
+                                       RK3                              33014    NOV/81     239
+                                       RK3N                             33015    NOV/81     241
+                             2.SEVERAL DERIV. RHS AVAILABLE
+    5.   2.   1.   1.   3.INITIAL BOUNDARY VALUE PROBLEM
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    5.   2.   1.   1.   3.                                             ARKMAT                           33066    NOV/81     243
+                   2.BOUNDARY VALUE PROBLEMS
+                        1.TWO POINT B.V.P.
+                             1.SHOOTING METHODS
+                               SEE ALSO SECTION 5.2.1.3.1
+                             2.LINEAR GLOBAL METHODS
+  1.SECOND ORDER TPBVP
+       1.SELF ADJOINT TPBVP
+                                       FEM LAG SYM                      33300    NOV/81     245
+                                       FEM LAG                          33301    NOV/81     245
+                                       FEM LAG SPHER                    33308    NOV/81     245
+       2.SKEW ADJOINT TPBVP
+                                       FEM LAG SKEW                     33302    NOV/81     247
+  2.FOURTH ORDER TPBVP
+       1.SELF ADJOINT TPBVP
+                                       FEM HERM SYM                     33303    NOV/81     249
+       2.SKEW ADJOINT TPBVP
+                             3.NON-LINEAR GLOBAL METHODS
+                                       NON LIN FEM LAG SKEW             33314    NOV/81     251
+                        2.TWO-DIMENSIONAL B.V.P.
+                             1.ELLIPTIC B.V.P.S
+  1.DISCRETIZATION PROCEDURES
+  2.SPECIAL LINEAR SYSTEMS
+                                       RICHARDSON                       33170    NOV/81     253
+                                       ELIMINATION                      33171    NOV/81     253
+    SEE ALSO SECTION 3.1.2
+  3.SPECIAL NON-LINEAR SYSTEMS
+                             2.PARABOLIC & HYPERBOLIC B.V.P.S
+                        3.MULTI-DIMENSIONAL B.V.P.
+                        4.OVER-DETERMINED PROBLEMS
+                   3.PARAMETER ESTIMATION IN D.E.
+                        1.P.E. IN INITIAL VALUE PROBLEMS
+                                       PEIDE                            34444    NOV/81     255
+              2.INTEGRAL EQUATIONS
+              3.INTEGRO- DIFFERENTIAL EQS
+              4.DIFFERENCE EQUATIONS
+              5.CONVOLUTION EQUATIONS
+    6.SPECIAL FUNCTIONS & CONSTANTS
+         1.MATHEMATICAL CONSTANTS
+                                       PI                           *   30006    NOV/81     257
+                                       E                            *   30007    NOV/81     257
+         2.MACHINE CONSTANTS
+                                       MBASE                        *   30001    NOV/81     259
+                                       ARREB                        *   30002    NOV/81     259
+                                       DWARF                        *   30003    NOV/81     259
+                                       GIANT                        *   30004    NOV/81     259
+                                       INTCAP                       *   30005    NOV/81     259
+                                       OVERFLOW                     *   30008    NOV/81     259
+                                       UNDERFLOW                    *   30009    NOV/81     259
+         3.RANDOM NUMBERS
+                                       RANDOM                           30010    NOT YET AVAILABLE
+                                       SETRANDOM                        30011    NOT YET AVAILABLE
+         4.ELEMENTARY FUNCTIONS
+              1.CIRCULAR FUNCTIONS
+    6.   4.   1.                                                       TAN                              35120    NOV/81     261
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    6.   4.   1.                                                       ARCSIN                           35121    NOV/81     261
+                                       ARCCOS                           35122    NOV/81     261
+              2.HYPERBOLIC FUNCTIONS
+                                       SINH                             35111    NOV/81     263
+                                       COSH                             35112    NOV/81     263
+                                       TANH                             35113    NOV/81     263
+                                       ARCSINH                          35114    NOV/81     263
+                                       ARCCOSH                          35115    NOV/81     263
+                                       ARCTANH                          35116    NOV/81     263
+              3.LOGARITHMIC FUNCTION
+                                       LOG ONE PLUS X                   35130    NOV/81     265
+         5.EXPONENTIAL INTEGRAL, ETC.
+              1.EXPONENTIAL INTEGRAL
+                                       EI                               35080    NOV/81     267
+                                       EI ALPHA                         35081    NOV/81     267
+                                       ENX                              35086    NOV/81     267
+                                       NONEXP ENX                       35087    NOV/81     267
+              2.SINE AND COSINE INTEGRAL
+                                       SINCOSINT                        35084    NOV/81     269
+                                       SINCOSFG                         35085    NOV/81     269
+         6.GAMMA FUNCTION, ETC.
+                                       GAMMA                            35061    NOV/81     271
+                                       RECIP GAMMA                      35060    NOV/81     271
+                                       LOG GAMMA                        35062    NOV/81     271
+                                       INCOMGAM                         35030    NOV/81     271
+                                       INCBETA                          35050    NOV/81     271
+                                       IBPPLUSN                         35051    NOV/81     271
+                                       IBQPLUSN                         35052    NOV/81     271
+                                       IXQFIX                           35053    NOV/81     271
+                                       IXPFIX                           35054    NOV/81     271
+                                       FORWARD                          35055    NOV/81     271
+                                       BACKWARD                         35056    NOV/81     271
+         7.ERROR FUNCTION, ETC.
+                                       ERRORFUNCTION                    35021    NOV/81     273
+                                       NONEXPERFC                       35022    NOV/81     273
+                                       INVERSE ERROR FUNCTION           35023    NOV/81     273
+                                       FRESNEL                          35027    NOV/81     273
+                                       FG                               35028    NOV/81     273
+         8.LEGENDRE FUNCTIONS
+         9.BESSEL FUNCTIONS OF INT. ORDER
+              1.BESSEL FUNCTIONS J AND Y
+                                       BESS J0                          35160    NOV/81     275
+                                       BESS J1                          35161    NOV/81     275
+                                       BESS J                           35162    NOV/81     275
+                                       BESS Y01                         35163    NOV/81     275
+                                       BESS Y                           35164    NOV/81     275
+                                       BESS PQ0                         35165    NOV/81     275
+                                       BESS PQ1                         35166    NOV/81     275
+              2.BESSEL FUNCTIONS I AND K
+                                       BESS I0                          35170    NOV/81     277
+                                       BESS I1                          35171    NOV/81     277
+                                       BESS I                           35172    NOV/81     277
+                                       BESS K01                         35173    NOV/81     277
+                                       BESS K                           35174    NOV/81     277
+    6.   9.   2.                                                       NONEXP BESS I0                   35175    NOV/81     277
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    6.   9.   2.                                                       NONEXP BESS I1                   35176    NOV/81     277
+                                       NONEXP BESS I                    35177    NOV/81     277
+                                       NONEXP BESS K01                  35178    NOV/81     277
+                                       NONEXP BESS K                    35179    NOV/81     277
+              3.KELVIN FUNCTIONS
+        10.BESSEL FUNCTIONS OF REAL ORDER
+              1.BESSEL FUNCTIONS J AND Y
+                                       BESS JAPLUSN                     35180    NOV/81     279
+                                       BESS YA01                        35181    NOV/81     279
+                                       BESS YAPLUSN                     35182    NOV/81     279
+                                       BESS PQA01                       35183    NOV/81     279
+                                       BESS ZEROS                       35184    NOV/81     279
+                                       START                            35185    NOV/81     279
+              2.BESSEL FUNCTIONS I AND K
+                                       BESS IAPLUSN                     35190    NOV/81     281
+                                       BESS KA01                        35191    NOV/81     281
+                                       BESS KAPLUSN                     35192    NOV/81     281
+                                       NONEXP BESS IAPLUSN              35193    NOV/81     281
+                                       NONEXP BESS KA01                 35194    NOV/81     281
+                                       NONEXP BESS KAPLUSN              35195    NOV/81     281
+              3.SPHERICAL BESSEL FUNCTIONS
+                                       SPHER BESS J                     35150    NOV/81     283
+                                       SPHER BESS Y                     35151    NOV/81     283
+                                       SPHER BESS I                     35152    NOV/81     283
+                                       SPHER BESS K                     35153    NOV/81     283
+                                       NONEXP SPHER BESS I              35154    NOV/81     283
+                                       NONEXP SPHER BESS K              35155    NOV/81     283
+              4.AIRY FUNCTIONS
+                                       AIRY                             35140    NOV/81     285
+                                       AIRYZEROS                        35145    NOV/81     285
+    7.INTERPOLATION & APPROXIMATION
+         1.REAL DATA IN ONE DIMENSION
+              1.INTERPOLATION, WITH
+                   1.POLYNOMIALS
+                        1.GENERAL POLYNOMIALS
+                                       NEWTON                           36010    NOV/81     287
+                        2.ORTHOGONAL POLYNOMIALS
+                   2.SPLINES
+                        1.GENERAL SPLINES
+                        2.NATURAL SPLINES
+                   3.TRIGONOMETRIC SERIES
+                        1.FOURIER SERIES
+                        2.SINE SERIES
+                        3.COSINE SERIES
+                   4.RATIONAL FUNCTIONS
+                   5.EXPONENTIAL FUNCTIONS
+              2.APPROXIMATION IN 2-NORM, WITH
+                   1.GENERAL FUNCTIONS
+                     SEE ALSO SECTION 5.1.3.1
+                   2.POLYNOMIALS
+                        1.GENERAL POLYNOMIALS
+                        2.ORTHOGONAL POLYNOMIALS
+                   3.SPLINES
+                        1.GENERAL SPLINES
+    7.   1.   2.   3.   2.NATURAL SPLINES
+1                    INDEX                                             PROCEDURE                        CODE     MNT/YR    RECORD
+                                                                                           NUMBER
+ 
+ 
+ 
+    7.   1.   2.   4.TRIGONOMETRIC SERIES
+                   5.RATIONAL FUNCTIONS
+                   6.EXPONENTIAL FUNCTIONS
+              3.APPROXIMATION IN INF-NORM,WITH
+                   1.GENERAL FUNCTIONS
+                   2.POLYNOMIALS
+                        1.GENERAL POLYNOMIALS
+                                       INI                              36020    NOV/81     289
+                                       SNDREMEZ                         36021    NOV/81     289
+                                       MINMAXPOL                        36022    NOV/81     289
+                        2.ORTHOGONAL POLYNOMIALS
+                   3.TRIGONOMETRIC SERIES
+                   4.RATIONAL FUNCTIONS
+              4.APPROXIMATION IN 1-NORM, WITH
+                   1.GENERAL FUNCTIONS
+                   2.POLYNOMIALS
+         2.REAL DATA IN MORE DIMENSIONS
+         3.REAL FUNCTIONS IN 1 DIMENSION
+              1.POLYNOMIALS
+    8.NUMBER THEORY
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ VERSION: 811214
+1
+ 
+ OBSOLETE PROCEDURES
+ 
+ PROCEDURE                     CODE       WITHDRAWAL   EXPIRATION      REPLACED BY
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ VERSION: 811214

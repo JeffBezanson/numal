@@ -1,0 +1,59 @@
+file: README for NUMAL.tar
+
+date: 100605
+
+by  : Jan Kok
+=========================
+
+Contents of NUMAL.tar
+---------------------
+
+The set of plaintext ASCII files
+   numalinx.txt
+   newnumal5p1.txt
+   newnumal5p2.txt
+   newnumal5p3.txt
+together contains an update of the index and manual of
+the library NUMAL of Algol 60 procedures in numerical mathematics
+as published in the Mathematical Centre publication: 
+     P.W. Hemker (ed.)[1981]: 
+     NUMAL. Numerical Procedures in ALGOL 60. 7 volumes.
+     MC Syllabus 47, Mathematical Centre, Amsterdam.
+
+Availability of the book version in the CWI publications repository:
+the repository description of the NUMAL index has URL
+http://repository.cwi.nl/search/fullrecord.php?publnr=12897
+It contains links to the other volumes and to the PDF files with
+scanned images of the 7 volumes.
+
+This update differs from the book version in the following respects:
+1. The sources (of procedures and examples) have been adapted to a newer
+   version of the compiler (Algol 60 version 5) and runtime system
+   then available on Control Data mainframes.
+2. The file numalinx.txt only contains a new, trimmed introduction and
+   the systematic index. The original introduction also describing the
+   history of the NUMAL development, and the KWIC index are available
+   in the printed version, volume 1.
+3. Errors have been corrected.
+4. First-column symbols of all lines are printer control characters.
+
+See the introduction of the Index (file numalinx.txt) for details.
+
+
+Availability
+------------
+The Stichting Centrum Wiskunde & Informatica (Stichting CWI)
+(legal successor of Stichting Mathematisch Centrum) at Amsterdam
+has granted permission to Paul McJones to attach the integral
+NUMAL library manual to his software preservation project web page.
+( URL: http://www.softwarepreservation.org/projects/ALGOL/applications/ )
+
+It may be freely used. It may be copied provided that the name NUMAL and
+the attribution to the Stichting CWI are retained.
+
+
+Address of the legal owner
+--------------------------
+Full info at URL: http://www.cwi.nl/en/general/Address
+ 
+=========================

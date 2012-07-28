@@ -1,0 +1,174 @@
+CC = icl
+CFLAGS = /O2 /QxW /DUSE_DOUBLE
+
+#CFILES1 = $(shell dir /B CHAPTER1\*.c)
+#CFILES2 = $(shell dir /B CHAPTER2\*.c)
+#CFILES3 = $(shell dir /B CHAPTER3\*.c)
+#CFILES4 = $(shell dir /B CHAPTER4\*.c)
+#CFILES5 = $(shell dir /B CHAPTER5\*.c)
+#CFILES6 = $(shell dir /B CHAPTER6\*.c)
+#CFILES7 = $(shell dir /B CHAPTER7\*.c)
+#CFILESU = $(shell dir /B UTILITY\*.c)
+
+#CFILES = $(CFILES1) $(CFILES2) $(CFILES3) $(CFILES4) $(CFILES5) $(CFILES6) \
+#	 $(CFILES7) $(CFILESU)
+
+CFILES = \
+CHAPTER1\absmaxma.c  CHAPTER1\elmvecro.c  CHAPTER1\lngintpo.c  \
+CHAPTER1\carpol.c    CHAPTER1\fulmatve.c  CHAPTER1\lngintsu.c \
+CHAPTER1\chsh2.c     CHAPTER1\fulsymma.c  CHAPTER1\matmat.c  \
+CHAPTER1\colcst.c    CHAPTER1\fultamve.c  CHAPTER1\mattam.c \
+CHAPTER1\comabs.c    CHAPTER1\hshcolma.c  CHAPTER1\matvec.c \
+CHAPTER1\comcolcs.c  CHAPTER1\hshcolta.c  CHAPTER1\maxelmro.c \
+CHAPTER1\comdiv.c    CHAPTER1\hshcomco.c  CHAPTER1\mulcol.c \
+CHAPTER1\comeucnr.c  CHAPTER1\hshcompr.c  CHAPTER1\mulrow.c \
+CHAPTER1\commatve.c  CHAPTER1\hshrowma.c  CHAPTER1\mulvec.c \
+CHAPTER1\commul.c    CHAPTER1\hshrowta.c  CHAPTER1\onenrmco.c \
+CHAPTER1\comrowcs.c  CHAPTER1\hshvecma.c  CHAPTER1\onenrmma.c \
+CHAPTER1\comscl.c    CHAPTER1\hshvecta.c  CHAPTER1\onenrmro.c \
+CHAPTER1\comsqrt.c   CHAPTER1\ichcol.c	  CHAPTER1\onenrmve.c \
+CHAPTER1\dupcolve.c  CHAPTER1\ichrow.c	  CHAPTER1\reascl.c \
+CHAPTER1\dupmat.c    CHAPTER1\ichrowco.c  CHAPTER1\resvec.c \
+CHAPTER1\duprowve.c  CHAPTER1\ichseq.c	  CHAPTER1\rotcol.c \
+CHAPTER1\dupvec.c    CHAPTER1\ichseqve.c  CHAPTER1\rotcomco.c \
+CHAPTER1\dupvecco.c  CHAPTER1\ichvec.c	  CHAPTER1\rotcomro.c \
+CHAPTER1\dupvecro.c  CHAPTER1\infnrmco.c  CHAPTER1\rotrow.c \
+CHAPTER1\elmcol.c    CHAPTER1\infnrmma.c  CHAPTER1\rowcst.c \
+CHAPTER1\elmcolro.c  CHAPTER1\infnrmro.c  CHAPTER1\scaprd1.c \
+CHAPTER1\elmcolve.c  CHAPTER1\infnrmve.c  CHAPTER1\sclcom.c \
+CHAPTER1\elmcomco.c  CHAPTER1\inimat.c	  CHAPTER1\seqvec.c \
+CHAPTER1\elmcomro.c  CHAPTER1\inimatd.c   CHAPTER1\symmatve.c \
+CHAPTER1\elmcomve.c  CHAPTER1\inisymd.c   CHAPTER1\symresve.c \
+CHAPTER1\elmrow.c    CHAPTER1\inisymro.c  CHAPTER1\tammat.c \
+CHAPTER1\elmrowco.c  CHAPTER1\inivec.c	  CHAPTER1\tamvec.c \
+CHAPTER1\elmrowve.c  CHAPTER1\lngintad.c  CHAPTER1\vecvec.c \
+CHAPTER1\elmvec.c    CHAPTER1\lngintdi.c \
+CHAPTER1\elmvecco.c  CHAPTER1\lngintmu.c \
+CHAPTER2\allchepo.c  CHAPTER2\fouser.c	  CHAPTER2\ortpolsy.c \
+CHAPTER2\allortpo.c  CHAPTER2\fouser1.c   CHAPTER2\pol.c \
+CHAPTER2\allortps.c  CHAPTER2\fouser2.c   CHAPTER2\polchs.c \
+CHAPTER2\chepol.c    CHAPTER2\grnnew.c	  CHAPTER2\polshtch.c \
+CHAPTER2\chepolsu.c  CHAPTER2\intchs.c	  CHAPTER2\shtchspo.c \
+CHAPTER2\chspol.c    CHAPTER2\jfrac.c	  CHAPTER2\sinser.c \
+CHAPTER2\comfous1.c  CHAPTER2\lintfmpo.c  CHAPTER2\sumortpo.c \
+CHAPTER2\comfous2.c  CHAPTER2\newgrn.c	  CHAPTER2\sumortps.c \
+CHAPTER2\comfouse.c  CHAPTER2\norderpo.c  CHAPTER2\taypol.c \
+CHAPTER2\cosser.c    CHAPTER2\oddchepo.c \
+CHAPTER2\derpol.c    CHAPTER2\ortpol.c \
+CHAPTER3\alljacze.c  CHAPTER3\eigcom.c	  CHAPTER3\mergesor.c \
+CHAPTER3\alllagze.c  CHAPTER3\eighrm.c	  CHAPTER3\onenrmin.c \
+CHAPTER3\allzerop.c  CHAPTER3\eigsym1.c   CHAPTER3\orthog.c \
+CHAPTER3\bakcomhe.c  CHAPTER3\eigsym2.c   CHAPTER3\pretfmma.c \
+CHAPTER3\bakhrmtr.c  CHAPTER3\eigvalco.c  CHAPTER3\psdinv.c \
+CHAPTER3\baklbr.c    CHAPTER3\eigvalhr.c  CHAPTER3\psdinvsv.c \
+CHAPTER3\baklbrco.c  CHAPTER3\eigvals1.c  CHAPTER3\psttfmma.c \
+CHAPTER3\bakreah1.c  CHAPTER3\eigvals2.c  CHAPTER3\qricom.c \
+CHAPTER3\bakreah2.c  CHAPTER3\eqilbr.c	  CHAPTER3\qrihrm.c \
+CHAPTER3\baksymt1.c  CHAPTER3\eqilbrco.c  CHAPTER3\qrisngva.c \
+CHAPTER3\baksymt2.c  CHAPTER3\erbelm.c	  CHAPTER3\qrisngvb.c \
+CHAPTER3\bounds.c    CHAPTER3\femlag.c	  CHAPTER3\qrisngvd.c \
+CHAPTER3\chldec1.c   CHAPTER3\femlagsp.c  CHAPTER3\qrisnvdb.c \
+CHAPTER3\chldec2.c   CHAPTER3\femlagsy.c  CHAPTER3\qrisym.c \
+CHAPTER3\chldecbn.c  CHAPTER3\gsitsole.c  CHAPTER3\qrisymtr.c \
+CHAPTER3\chldeci1.c  CHAPTER3\gsselm.c	  CHAPTER3\qrivalhr.c \
+CHAPTER3\chldeci2.c  CHAPTER3\gsserb.c	  CHAPTER3\qrivals1.c \
+CHAPTER3\chldecs1.c  CHAPTER3\gssinv.c	  CHAPTER3\qrivals2.c \
+CHAPTER3\chldecs2.c  CHAPTER3\gssinver.c  CHAPTER3\qrivalst.c \
+CHAPTER3\chldecsb.c  CHAPTER3\gssitiso.c  CHAPTER3\qzi.c \
+CHAPTER3\chldetm1.c  CHAPTER3\gssnri.c	  CHAPTER3\qzival.c \
+CHAPTER3\chldetm2.c  CHAPTER3\gsssol.c	  CHAPTER3\reaeig1.c \
+CHAPTER3\chldtmbn.c  CHAPTER3\gsssoler.c  CHAPTER3\reaeig3.c \
+CHAPTER3\chlinv1.c   CHAPTER3\hestgl2.c   CHAPTER3\reaeigva.c \
+CHAPTER3\chlinv2.c   CHAPTER3\hestgl3.c   CHAPTER3\reaqri.c \
+CHAPTER3\chlsol1.c   CHAPTER3\homsol.c	  CHAPTER3\reavalqr.c \
+CHAPTER3\chlsol2.c   CHAPTER3\homsolsv.c  CHAPTER3\reaveche.c \
+CHAPTER3\chlsolbn.c  CHAPTER3\hsh2col.c   CHAPTER3\rowperm.c \
+CHAPTER3\comeig1.c   CHAPTER3\hsh2row2.c  CHAPTER3\selzerop.c  \
+CHAPTER3\comeigva.c  CHAPTER3\hsh2row3.c  CHAPTER3\sol.c \
+CHAPTER3\comkwd.c    CHAPTER3\hsh3col.c   CHAPTER3\solbnd.c \
+CHAPTER3\comvalqr.c  CHAPTER3\hsh3row2.c  CHAPTER3\solelm.c \
+CHAPTER3\comveche.c  CHAPTER3\hsh3row3.c  CHAPTER3\solovr.c \
+CHAPTER3\conjgrad.c  CHAPTER3\hshcomhe.c  CHAPTER3\solsvdov.c \
+CHAPTER3\dec.c	     CHAPTER3\hshdecmu.c  CHAPTER3\solsvdun.c \
+CHAPTER3\decbnd.c    CHAPTER3\hshhrmtr.c  CHAPTER3\solsym2.c \
+CHAPTER3\decinv.c    CHAPTER3\hshhrmtv.c  CHAPTER3\solsymtr.c \
+CHAPTER3\decsol.c    CHAPTER3\hshreabi.c  CHAPTER3\soltri.c \
+CHAPTER3\decsolbn.c  CHAPTER3\inv.c	  CHAPTER3\soltripi.c \
+CHAPTER3\decsols2.c  CHAPTER3\inv1.c CHAPTER3\solund.c \
+CHAPTER3\decsolst.c  CHAPTER3\itisol.c	  CHAPTER3\symeigim.c \
+CHAPTER3\decsoltp.c  CHAPTER3\itisoler.c  CHAPTER3\tfmpreve.c \
+CHAPTER3\decsoltr.c  CHAPTER3\lsqdecom.c  CHAPTER3\tfmreahe.c \
+CHAPTER3\decsym2.c   CHAPTER3\lsqdglin.c  CHAPTER3\tfmsymt1.c \
+CHAPTER3\decsymtr.c  CHAPTER3\lsqinv.c	  CHAPTER3\tfmsymt2.c \
+CHAPTER3\dectri.c    CHAPTER3\lsqortde.c  CHAPTER3\valqrico.c \
+CHAPTER3\dectripi.c  CHAPTER3\lsqortds.c  CHAPTER3\valsymtr.c \
+CHAPTER3\determ.c    CHAPTER3\lsqrefso.c  CHAPTER3\vecperm.c \
+CHAPTER3\determbn.c  CHAPTER3\lsqsol.c	  CHAPTER3\vecsymtr.c \
+CHAPTER3\detmsym2.c  CHAPTER3\lupzerop.c  CHAPTER3\zerpol.c \
+CHAPTER4\euler.c     CHAPTER4\integral.c  CHAPTER4\reccof.c \
+CHAPTER4\gssjacwg.c  CHAPTER4\jacobnbn.c  CHAPTER4\sumposse.c \
+CHAPTER4\gsslagwg.c  CHAPTER4\jacobnmf.c  CHAPTER4\tricub.c \
+CHAPTER4\gsswts.c    CHAPTER4\jacobnnf.c \
+CHAPTER4\gsswtssy.c  CHAPTER4\qadrat.c \
+CHAPTER5\ark.c	     CHAPTER5\gms.c	  CHAPTER5\richards.c \
+CHAPTER5\arkmat.c    CHAPTER5\gssnewto.c  CHAPTER5\rk1.c \
+CHAPTER5\davupd.c    CHAPTER5\impex.c	  CHAPTER5\rk2.c \
+CHAPTER5\diffsys.c   CHAPTER5\linemin.c   CHAPTER5\rk2n.c \
+CHAPTER5\eferk.c     CHAPTER5\liniger1.c  CHAPTER5\rk3.c \
+CHAPTER5\efrk.c      CHAPTER5\liniger2.c  CHAPTER5\rk3n.c \
+CHAPTER5\efsirk.c    CHAPTER5\marquard.c  CHAPTER5\rk4a.c \
+CHAPTER5\eft.c	     CHAPTER5\minin.c	  CHAPTER5\rk4na.c \
+CHAPTER5\eliminat.c  CHAPTER5\mininder.c  CHAPTER5\rk5na.c \
+CHAPTER5\femherms.c  CHAPTER5\mtaylor.c   CHAPTER5\rke.c \
+CHAPTER5\femlag.c    CHAPTER5\multiste.c  CHAPTER5\rnk1min.c \
+CHAPTER5\femlagsk.c  CHAPTER5\nonlinfe.c  CHAPTER5\rnk1upd.c \
+CHAPTER5\femlagsp.c  CHAPTER5\peide.c	  CHAPTER5\zeroin.c \
+CHAPTER5\femlagsy.c  CHAPTER5\praxis.c	  CHAPTER5\zeroinde.c \
+CHAPTER5\flemin.c    CHAPTER5\quanewb1.c  CHAPTER5\zeroinra.c \
+CHAPTER5\fleupd.c    CHAPTER5\quanewbn.c \
+CHAPTER6\airy.c      CHAPTER6\bessy.c	  CHAPTER6\logonepl.c \
+CHAPTER6\airyzero.c  CHAPTER6\bessy01.c   CHAPTER6\nebesiap.c \
+CHAPTER6\arccosh.c   CHAPTER6\bessya01.c  CHAPTER6\nebesk01.c \
+CHAPTER6\arcsinh.c   CHAPTER6\bessyapl.c  CHAPTER6\nebessi.c \
+CHAPTER6\arctanh.c   CHAPTER6\besszero.c  CHAPTER6\nebessi0.c \
+CHAPTER6\backward.c  CHAPTER6\ei.c	  CHAPTER6\nebessi1.c \
+CHAPTER6\bespqa01.c  CHAPTER6\eialpha.c   CHAPTER6\nebessk.c \
+CHAPTER6\bessi.c     CHAPTER6\enx.c	  CHAPTER6\nebska01.c \
+CHAPTER6\bessi0.c    CHAPTER6\errorfun.c  CHAPTER6\nebskapl.c \
+CHAPTER6\bessi1.c    CHAPTER6\fg.c	  CHAPTER6\nespbesi.c \
+CHAPTER6\bessiapl.c  CHAPTER6\forward.c   CHAPTER6\nespbesk.c \
+CHAPTER6\bessj.c     CHAPTER6\fresnel.c   CHAPTER6\nonexpen.c \
+CHAPTER6\bessj0.c    CHAPTER6\gamma.c	  CHAPTER6\nonexper.c \
+CHAPTER6\bessj1.c    CHAPTER6\ibpplusn.c  CHAPTER6\recipgam.c \
+CHAPTER6\bessjapl.c  CHAPTER6\ibqplusn.c  CHAPTER6\sincosfg.c \
+CHAPTER6\bessk.c     CHAPTER6\incbeta.c   CHAPTER6\sincosin.c \
+CHAPTER6\bessk01.c   CHAPTER6\incomgam.c  CHAPTER6\spbessi.c \
+CHAPTER6\besska01.c  CHAPTER6\inverrfn.c  CHAPTER6\spbessj.c \
+CHAPTER6\besskapl.c  CHAPTER6\ixpfix.c	  CHAPTER6\spbessk.c \
+CHAPTER6\besspq0.c   CHAPTER6\ixqfix.c	  CHAPTER6\spbessy.c \
+CHAPTER6\besspq1.c   CHAPTER6\loggamma.c  CHAPTER6\start.c \
+CHAPTER7\ini.c	CHAPTER7\minmaxpo.c  CHAPTER7\newton.c	CHAPTER7\sndremez.c \
+UTILITY\error.c    UTILITY\free_rm.c  UTILITY\ivector.c \
+UTILITY\free_im.c  UTILITY\free_rv.c  UTILITY\rmatrix.c \
+UTILITY\free_iv.c  UTILITY\imatrix.c  UTILITY\rvector.c
+
+OFILES = $(CFILES:.c=.obj)
+
+LIBNAME = libnumal.lib
+
+default: $(OFILES)
+	lib /OUT:$(LIBNAME) *.obj
+
+%.obj: %.c
+	$(CC) $(CFLAGS) /c $<
+
+clean:
+	cd CHAPTER1 && del *.obj && cd ..
+	cd CHAPTER2 && del *.obj && cd ..
+	cd CHAPTER3 && del *.obj && cd ..
+	cd CHAPTER4 && del *.obj && cd ..
+	cd CHAPTER5 && del *.obj && cd ..
+	cd CHAPTER6 && del *.obj && cd ..
+	cd CHAPTER7 && del *.obj && cd ..
+	cd UTILITY && del *.obj && cd ..
+	rm $(LIBNAME)
